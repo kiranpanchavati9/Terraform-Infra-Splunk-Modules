@@ -58,26 +58,12 @@ resource "null_resource" "splunk-hf" {
   }
 
   provisioner "remote-exec" {
-
     inline = [
-
-      # install wget using:
       "sudo dnf install -y wget",
-
-      # Install the GIt
       "sudo dnf install -y git",
-
-      # Use token-based clone to avoid interactive prompt
-      "git clone https://${var.github_username}:${var.github_token}@github.com/kiranpanchavati9/Splunk-December-Weekday-Batch.git",
-
-      # Go to the directory
-      "cd 'Splunk-December-Weekday-Batch/Splunk Installation' && chmod +x splunk.sh && ./splunk.sh",
-
-      # Change the permissions
-      "chmod +x splunk.sh",
-
-      # Run the shell script
-      "./splunk.sh",
+      "rm -rf /home/ec2-user/Splunk-December-Weekday-Batch",
+      "git clone https://${var.github_username}:${var.github_token}@github.com/kiranpanchavati9/Splunk-December-Weekday-Batch.git /home/ec2-user/Splunk-December-Weekday-Batch",
+      "sudo bash '/home/ec2-user/Splunk-December-Weekday-Batch/Splunk Installation/splunk.sh'",
     ]
   }
 }
