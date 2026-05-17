@@ -15,10 +15,8 @@ variable "iam_role" {
 # }
 
 variable "component" {
-  default = {
-    "splunk-hf" = ""
-    "splunk-us" = ""
-  }
+  type    = string
+  default = "splunk"
 }
 
 variable "key_name" {

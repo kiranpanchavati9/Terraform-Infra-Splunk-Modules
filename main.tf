@@ -5,7 +5,7 @@ module "splunk-hf" {
   #zone_id = var.zone_id
   instance_type = var.instance_type
   ami = var.ami
-  component = var.component
+  component = "splunk-hf"
   key_name = var.key_name
   type = var.type
   private_key = file(var.private_key)
@@ -22,7 +22,7 @@ module "splunk-us" {
   iam_role = var.iam_role
   instance_type =  var.instance_type
   ami = var.ami
-  component = var.component
+  component = "splunk-us"
   key_name = var.key_name
   type = var.type
   private_key = file(var.private_key)
