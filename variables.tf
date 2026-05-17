@@ -10,10 +10,14 @@ variable "iam_role" {
   default = "workstation-role"
 }
 
-variable "zone_id" {
-  default = "Z01214421PKKTLXAI5VN5"
-}
+# variable "zone_id" {
+#   default = "Z01214421PKKTLXAI5VN5"
+# }
 
 variable "component" {
   default = "splunk-hf"
+}
+
+variable "key_name" {
+  default = "roboshop-dev"
 }

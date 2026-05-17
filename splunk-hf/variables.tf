@@ -9,6 +9,7 @@ variable "ip_protocol" {
 variable "ami" {}
 variable "instance_type" {}
 variable "iam_role" {}
-variable "zone_id" {}
+# variable "zone_id" {}
 variable "component" {}
 variable "vpc_security_group_ids" {}
+variable "key_name" {}
