@@ -13,3 +13,7 @@ variable "iam_role" {}
 variable "component" {}
 variable "vpc_security_group_ids" {}
 variable "key_name" {}
+variable "type" {}
+variable "user" {}
+variable "private_key" {}
+variable "timeout" {}

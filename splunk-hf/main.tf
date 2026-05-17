@@ -45,4 +45,41 @@ resource "aws_instance" "splunk-hf" {
 }
 
 
+# Install the Splunk
+
+resource "null_resource" "splunk-hf" {
+
+  connection {
+    type        =  var.type
+    user        = var.user
+    private_key = var.private_key
+    host        =  aws_instance.splunk-hf.public_ip
+    timeout     = var.timeout
+  }
+
+  provisioner "remote-exec" {
+
+    inline = [
+
+      # install wget using:
+      "sudo dnf install -y wget",
+
+      # Install the GIt
+      "sudo dnf install -y git",
+
+      # Git clone
+      "git clone https://github.com/kiranpanchavati9/Splunk-December-Weekday-Batch.git",
+
+      # Go to the directory
+      "cd Splunk-December-Weekday-Batch/Splunk Installation",
+
+      # Change the permissions
+      "chmod +x splunk.sh",
+
+      # Run the shell script
+      "./splunk.sh",
+    ]
+  }
+}
+
 

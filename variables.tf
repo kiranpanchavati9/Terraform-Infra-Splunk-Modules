@@ -21,3 +21,19 @@ variable "component" {
 variable "key_name" {
   default = "roboshop-dev"
 }
+
+variable "type" {
+  default = "ssh"
+}
+
+variable "user" {
+  default = "ec2-user"
+}
+
+variable "private_key" {
+  default = "/root/.ssh/roboshop-dev.pem"
+}
+
+variable "timeout" {
+  default = "5s"
+}

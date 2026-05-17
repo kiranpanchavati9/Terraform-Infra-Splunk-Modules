@@ -7,4 +7,8 @@ module "splunk-hf" {
   ami = var.ami
   component = var.component
   key_name = var.key_name
+  type = var.type
+  user = var.user
+  private_key = file(var.private_key)
+  timeout = var.timeout
 }
