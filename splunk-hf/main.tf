@@ -67,11 +67,11 @@ resource "null_resource" "splunk-hf" {
       # Install the GIt
       "sudo dnf install -y git",
 
-      # Git clone
-      "git clone https://github.com/kiranpanchavati9/Splunk-December-Weekday-Batch.git",
+      # Use token-based clone to avoid interactive prompt
+      "git clone https://${var.github_username}:${var.github_token}@github.com/kiranpanchavati9/Splunk-December-Weekday-Batch.git",
 
       # Go to the directory
-      "cd Splunk-December-Weekday-Batch/Splunk Installation",
+      "cd 'Splunk-December-Weekday-Batch/Splunk Installation' && chmod +x splunk.sh && ./splunk.sh",
 
       # Change the permissions
       "chmod +x splunk.sh",

@@ -17,3 +17,5 @@ variable "type" {}
 variable "user" {}
 variable "private_key" {}
 variable "timeout" {}
+variable "github_username" {}
+variable "github_token" {}

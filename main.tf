@@ -8,7 +8,9 @@ module "splunk-hf" {
   component = var.component
   key_name = var.key_name
   type = var.type
-  user = var.user
   private_key = file(var.private_key)
+  user = var.user
   timeout = var.timeout
+  github_token =  var.github_token
+  github_username =  var.github_username
 }

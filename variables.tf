@@ -37,3 +37,14 @@ variable "private_key" {
 variable "timeout" {
   default = "5s"
 }
+
+variable "github_username" {
+  description = "GitHub username for cloning private repo"
+  type        = string
+}
+
+variable "github_token" {
+  description = "GitHub personal access token"
+  type        = string
+  sensitive   = true
+}
