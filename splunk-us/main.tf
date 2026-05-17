@@ -15,7 +15,7 @@ resource "aws_instance" "splunk-us" {
 # Install the Splunk
 
 resource "null_resource" "splunk-us" {
-
+  depends_on = [aws_instance.splunk-us]
   connection {
     type        =  var.type
     user        = var.user

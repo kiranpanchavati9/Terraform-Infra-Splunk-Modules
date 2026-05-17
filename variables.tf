@@ -35,7 +35,7 @@ variable "private_key" {
 }
 
 variable "timeout" {
-  default = "5s"
+  default = "3m"
 }
 
 variable "github_username" {
