@@ -31,7 +31,7 @@ variable "user" {
 }
 
 variable "private_key" {
-  default = "/root/.ssh/roboshop-dev.pem"
+  default = "/home/ec2-user/.ssh/roboshop-dev.pem"
 }
 
 variable "timeout" {
