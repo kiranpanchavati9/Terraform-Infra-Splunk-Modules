@@ -5,3 +5,10 @@ variable "cidr_ipv4" {
 variable "ip_protocol" {
   default = "-1"
 }
+
+variable "ami" {}
+variable "instance_type" {}
+variable "iam_role" {}
+variable "zone_id" {}
+variable "component" {}
+variable "vpc_security_group_ids" {}

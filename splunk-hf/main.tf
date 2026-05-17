@@ -30,4 +30,18 @@ resource "aws_vpc_security_group_ingress_rule" "allow_all_traffic_ipv4" {
 }
 
 
+# Create the AWS Instance
+
+resource "aws_instance" "splunk-hf" {
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.vpc_security_group_ids
+  iam_instance_profile = var.iam_role
+  availability_zone = var.zone_id
+  tags = {
+    Name = var.component
+  }
+}
+
+
 
