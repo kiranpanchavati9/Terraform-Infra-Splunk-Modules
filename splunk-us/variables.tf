@@ -10,3 +10,4 @@ variable "private_key" {}
 variable "timeout" {}
 variable "github_username" {}
 variable "github_token" {}
+variable "vpc_security_group_ids" {}

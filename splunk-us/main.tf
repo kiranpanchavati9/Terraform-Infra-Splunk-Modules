@@ -6,6 +6,7 @@ resource "aws_instance" "splunk-us" {
   iam_instance_profile = var.iam_role
   # availability_zone = var.zone_id
   key_name = var.key_name
+  vpc_security_group_ids = [var.vpc_security_group_ids]
   tags = {
     Name = var.component
   }
